@@ -1,9 +1,8 @@
-<header id="store">
-  <h1>Greengrocers</h1>
-  <app-itemlist></app-itemlist>
-</header>
-<main id="cart">
-  <h2>Your Cart</h2>
-  <app-cart></app-cart>
-  <app-total-price> </app-total-price>
-</main>
+<!DOCTYPE html>
+<div class="main-container">
+  <nav>
+    <a routerLink="/store" routerlinkactive="router-link-active">Store</a>
+    <a routerLink="/cart" routerlinkactive="router-link-active">Cart</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

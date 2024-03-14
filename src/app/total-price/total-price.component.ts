@@ -35,6 +35,5 @@ export class TotalPriceComponent implements OnInit, OnDestroy {
     this.totalPrice = itemsInCart.reduce((total, item) => {
       return total + item.price * item.quantity;
     }, 0);
-    this.totalPrice = Number(this.totalPrice.toFixed(2));
   }
 }

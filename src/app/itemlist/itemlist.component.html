@@ -1,8 +1,27 @@
-<ul class="item-list store--item-list">
-  <li *ngFor="let item of items">
-    <div class="store--item-icon">
-      <img [src]="'assets/icons/' + item.id + '.svg'" [alt]="item.name" />
+<header id="store">
+  <h1>Greengrocers</h1>
+  <ul class="item-list store--item-list">
+    <li *ngFor="let item of items; let i = index">
+      <div class="store--item-icon">
+        <img [src]="'assets/icons/' + item.id + '.svg'" [alt]="item.name" />
+      </div>
+      <button (click)="addToCart(item, i)">Add to cart</button>
+      <div class="modal" *ngIf="showModal[i]">
+        {{ items[i].name.charAt(0).toUpperCase() + items[i].name.slice(1) }}
+        added!
+      </div>
+    </li>
+    <div class="sort-buttons">
+      <button (click)="sortByPrice()">Sort by price</button>
+      <button (click)="sortByName()">Sort by name</button>
+      <div>
+        <select [(ngModel)]="selectedFilter" (change)="sortByType()">
+          <option value="none">None</option>
+          <option value="fruit">Fruit</option>
+          <option value="berry">Berry</option>
+          <option value="vegetable">Vegetable</option>
+        </select>
+      </div>
     </div>
-     <button (click)="addToCart(item)">Add to cart</button>
-  </li>
-</ul>
+  </ul>
+</header>

@@ -1,7 +1,9 @@
-<div>
-  <h3>Total</h3>
-</div>
+<div *ngIf="totalPrice > 0" class="total">
+  <div>
+    <h3>Total</h3>
+  </div>
 
-<div>
-  <span class="total-number">{{ totalPrice }}£</span>
+  <div>
+    <span class="total-number">{{ totalPrice | currency }}£</span>
+  </div>
 </div>
