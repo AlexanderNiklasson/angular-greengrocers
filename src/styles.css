@@ -49,15 +49,16 @@ button {
 /* Store */
 
 .modal {
-  position: fixed;
+  position: absolute;
   top: 85px;
   right: 20px;
   background-color: #fff;
   padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  animation: fadeOut 2s forwards; /* Apply fading animation */
+  animation: fadeOut 2s forwards;
 }
 
 @keyframes fadeOut {

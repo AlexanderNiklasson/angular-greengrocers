@@ -53,13 +53,16 @@ export class ItemlistComponent implements OnInit, OnDestroy {
 
   sortByPrice(): void {
     this.items.sort((a, b) => a.price - b.price);
+    this.hideAllModals();
   }
 
   sortByName(): void {
     this.items.sort((a, b) => a.name.localeCompare(b.name));
+    this.hideAllModals();
   }
 
   sortByType(): void {
+    this.hideAllModals();
     if (this.selectedFilter === 'none') {
       this.items = this.serviceItemsService.getItems();
     } else if (this.selectedFilter === 'fruit') {
@@ -110,5 +113,8 @@ export class ItemlistComponent implements OnInit, OnDestroy {
     this.timeoutIds.forEach((timeoutId, index) => {
       this.clearTimeout(index);
     });
+  }
+  hideAllModals(): void {
+    this.showModal = this.showModal.map(() => false);
   }
 }
